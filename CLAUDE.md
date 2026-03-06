@@ -2,19 +2,19 @@
 
 ## CURRENT STATE
 **Last Updated:** 2026-03-06
-**Active Sprint:** Sprint 1
-**Last Completed:** Sprint 0 — Bootstrap + Sanity Setup
-**Next Action:** Begin Sprint 1 — Layout + Hero + About + Skills + Experience
+**Active Sprint:** COMPLETE
+**Last Completed:** Sprint 5 — Polish + Animations + SEO + Netlify Deploy
+**Next Action:** Live on Netlify — ongoing content updates via Sanity Studio
 
 ---
 
 ## SPRINT STATUS
 - [x] Sprint 0 — Bootstrap + Sanity Setup
-- [ ] Sprint 1 — Layout + Hero + About + Skills + Experience
-- [ ] Sprint 2 — Projects Page (Sanity + GitHub API)
-- [ ] Sprint 3 — Resume Page (Sanity PDF)
-- [ ] Sprint 4 — Contact Page + Footer
-- [ ] Sprint 5 — Polish + Animations + SEO + Netlify Deploy
+- [x] Sprint 1 — Layout + Hero + About + Skills + Experience
+- [x] Sprint 2 — Projects Page (Sanity + GitHub API)
+- [x] Sprint 3 — Resume Page (Sanity PDF)
+- [x] Sprint 4 — Contact Page + Footer
+- [x] Sprint 5 — Polish + Animations + SEO + Netlify Deploy
 
 ---
 
@@ -24,6 +24,8 @@
 - 2026-03-06: GitHub repo named portfolio-v2 (portfolio was already taken on the account)
 - 2026-03-06: Scaffolded Vite in temp dir then moved files — existing CLAUDE.md/docs prevented in-place scaffold
 - 2026-03-06: Added class-variance-authority manually — shadcn add does not install all transitive deps
+- 2026-03-06: Sanity CORS — must add http://localhost:5173 (and Netlify URL) to sanity.io/manage → project → API → CORS Origins
+- 2026-03-06: Sanity fields can return null (not undefined) — always use `?? []` not `= []` for array fields
 
 ---
 

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { Send, CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -95,6 +96,13 @@ function ContactForm() {
 export default function Contact() {
   return (
     <main className="max-w-5xl mx-auto px-4 py-16">
+      <Helmet>
+        <title>Contact — Manjunath H K</title>
+        <meta name="description" content="Get in touch with Manjunath H K — Senior SDET open to new opportunities. Connect on LinkedIn, GitHub, or send a message." />
+        <meta property="og:title" content="Contact — Manjunath H K" />
+        <meta property="og:description" content="Open to Senior SDET roles and automation consulting. Let's connect." />
+      </Helmet>
+
       {/* Header */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}

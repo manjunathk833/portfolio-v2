@@ -2,9 +2,9 @@
 
 ## CURRENT STATE
 **Last Updated:** 2026-03-06
-**Active Sprint:** Sprint 5
-**Last Completed:** Sprint 4 — Contact Page + Footer
-**Next Action:** Begin Sprint 5 — Polish + Animations + SEO + Netlify Deploy
+**Active Sprint:** COMPLETE
+**Last Completed:** Sprint 5 — Polish + Animations + SEO + Netlify Deploy
+**Next Action:** Live on Netlify — ongoing content updates via Sanity Studio
 
 ---
 
@@ -14,7 +14,7 @@
 - [x] Sprint 2 — Projects Page (Sanity + GitHub API)
 - [x] Sprint 3 — Resume Page (Sanity PDF)
 - [x] Sprint 4 — Contact Page + Footer
-- [ ] Sprint 5 — Polish + Animations + SEO + Netlify Deploy
+- [x] Sprint 5 — Polish + Animations + SEO + Netlify Deploy
 
 ---
 

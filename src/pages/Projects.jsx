@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Skeleton } from '@/components/ui/skeleton'
 import ProjectCard from '@/components/projects/ProjectCard'
@@ -41,6 +42,13 @@ export default function Projects() {
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-16">
+      <Helmet>
+        <title>Projects — Manjunath H K</title>
+        <meta name="description" content="Automation frameworks and tools built by Manjunath H K — Senior SDET. Live GitHub stats per project." />
+        <meta property="og:title" content="Projects — Manjunath H K" />
+        <meta property="og:description" content="Curated automation projects with live GitHub stats. API frameworks, BDD suites, and more." />
+      </Helmet>
+
       {/* Header */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}

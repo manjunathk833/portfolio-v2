@@ -2,15 +2,15 @@
 
 ## CURRENT STATE
 **Last Updated:** 2026-03-06
-**Active Sprint:** Sprint 1
-**Last Completed:** Sprint 0 — Bootstrap + Sanity Setup
-**Next Action:** Begin Sprint 1 — Layout + Hero + About + Skills + Experience
+**Active Sprint:** Sprint 2
+**Last Completed:** Sprint 1 — Layout + Hero + About + Skills + Experience
+**Next Action:** Begin Sprint 2 — Projects Page (Sanity + GitHub API)
 
 ---
 
 ## SPRINT STATUS
 - [x] Sprint 0 — Bootstrap + Sanity Setup
-- [ ] Sprint 1 — Layout + Hero + About + Skills + Experience
+- [x] Sprint 1 — Layout + Hero + About + Skills + Experience
 - [ ] Sprint 2 — Projects Page (Sanity + GitHub API)
 - [ ] Sprint 3 — Resume Page (Sanity PDF)
 - [ ] Sprint 4 — Contact Page + Footer

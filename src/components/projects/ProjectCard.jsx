@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button'
 import { useGitHubStats } from '@/hooks/useGitHubStats'
 
 export default function ProjectCard({ project }) {
-  const { title, description, techStack = [], githubUrl, liveUrl, imageUrl } = project
+  const { title, description, techStack, githubUrl, liveUrl, imageUrl } = project
+  const tech = techStack ?? []
   const stats = useGitHubStats(githubUrl)
 
   return (
@@ -33,14 +34,14 @@ export default function ProjectCard({ project }) {
         </p>
 
         {/* Tech stack tags */}
-        {techStack.length > 0 && (
+        {tech.length > 0 && (
           <div className="flex flex-wrap gap-1.5">
-            {techStack.map((tech) => (
+            {tech.map((t) => (
               <span
-                key={tech}
+                key={t}
                 className="font-mono text-xs px-2 py-1 rounded border border-border bg-muted text-muted-foreground"
               >
-                {tech}
+                {t}
               </span>
             ))}
           </div>

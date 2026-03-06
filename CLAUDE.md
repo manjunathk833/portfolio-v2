@@ -24,6 +24,8 @@
 - 2026-03-06: GitHub repo named portfolio-v2 (portfolio was already taken on the account)
 - 2026-03-06: Scaffolded Vite in temp dir then moved files — existing CLAUDE.md/docs prevented in-place scaffold
 - 2026-03-06: Added class-variance-authority manually — shadcn add does not install all transitive deps
+- 2026-03-06: Sanity CORS — must add http://localhost:5173 (and Netlify URL) to sanity.io/manage → project → API → CORS Origins
+- 2026-03-06: Sanity fields can return null (not undefined) — always use `?? []` not `= []` for array fields
 
 ---
 

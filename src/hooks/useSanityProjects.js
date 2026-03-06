@@ -8,7 +8,7 @@ export function useSanityProjects() {
   useEffect(() => {
     client.fetch(PROJECTS_QUERY)
       .then(setProjects)
-      .catch(() => setProjects([]))
+      .catch((err) => { console.error('Sanity fetch error:', err); setProjects([]) })
       .finally(() => setLoading(false))
   }, [])
 

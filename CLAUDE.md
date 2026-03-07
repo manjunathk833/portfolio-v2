@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 ## CURRENT STATE
-**Last Updated:** 2026-03-06
+**Last Updated:** 2026-03-07
 **Active Sprint:** COMPLETE
 **Last Completed:** Sprint 5 — Polish + Animations + SEO + Netlify Deploy
 **Next Action:** Live on Netlify — ongoing content updates via Sanity Studio
@@ -30,7 +30,7 @@
 ---
 
 ## KNOWN ISSUES
-- Sanity Studio not yet initialized — user must run `npm create sanity@latest` and copy project ID to .env
+- None currently
 
 ---
 
@@ -39,6 +39,7 @@ Personal portfolio for Manjunath H K (Senior SDET).
 Public site — no authentication.
 CMS: Sanity (projects + resume PDF)
 Hosting: Netlify (auto-deploy from main)
+Live: https://manjunathhk.netlify.app
 GitHub: https://github.com/manjunathk833/portfolio-v2
 See docs/PLAN.md for sprint tasks.
 See docs/ARCHITECTURE.md for tech decisions.

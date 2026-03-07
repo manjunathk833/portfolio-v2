@@ -112,6 +112,178 @@ export const awards = [
   },
 ]
 
+export const testShowcase = [
+  {
+    id: 'bdd-api',
+    title: 'BDD API Test',
+    framework: 'Rest Assured + Cucumber',
+    language: 'java',
+    highlights: ['BDD Gherkin syntax', 'RestAssured assertions', 'Scenario context sharing'],
+    description:
+      'End-to-end booking API scenario using BDD Cucumber with Rest Assured. Validates request payload, response schema, and chains test data across steps.',
+    code: `@When("I POST a new booking with valid details")
+public void postNewBooking() {
+    Map<String, Object> body = Map.of(
+        "firstName",  "John",
+        "lastName",   "Doe",
+        "totalPrice", 150,
+        "depositPaid", true,
+        "bookingdates", Map.of(
+            "checkin",  "2025-01-15",
+            "checkout", "2025-01-20"
+        )
+    );
+
+    response = given()
+        .baseUri("https://restful-booker.herokuapp.com")
+        .contentType(ContentType.JSON)
+        .body(body)
+    .when()
+        .post("/booking")
+    .then()
+        .statusCode(200)
+        .body("bookingid",        notNullValue())
+        .body("booking.firstName", equalTo("John"))
+        .extract().response();
+}
+
+@Then("the booking ID is stored for later use")
+public void storeBookingId() {
+    int id = response.jsonPath().getInt("bookingid");
+    Assert.assertTrue(id > 0, "Booking ID must be a positive integer");
+    ScenarioContext.set("BOOKING_ID", id);
+}`,
+  },
+  {
+    id: 'pom-selenium',
+    title: 'Page Object Model',
+    framework: 'Selenium + Python',
+    language: 'python',
+    highlights: ['Page Object pattern', 'Explicit waits', 'Fluent interface'],
+    description:
+      'Selenium UI automation with the Page Object Model pattern in Python. Uses explicit waits and a fluent interface to keep tests readable and maintenance-friendly.',
+    code: `# pages/login_page.py
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+class LoginPage:
+    EMAIL    = (By.ID, "email")
+    PASSWORD = (By.ID, "password")
+    SUBMIT   = (By.CSS_SELECTOR, "button[type='submit']")
+
+    def __init__(self, driver):
+        self.driver = driver
+        self.wait   = WebDriverWait(driver, 10)
+
+    def login(self, email: str, password: str) -> "DashboardPage":
+        self.wait.until(EC.visibility_of_element_located(self.EMAIL))
+        self.driver.find_element(*self.EMAIL).send_keys(email)
+        self.driver.find_element(*self.PASSWORD).send_keys(password)
+        self.driver.find_element(*self.SUBMIT).click()
+        return DashboardPage(self.driver)
+
+# tests/test_login.py
+def test_valid_user_can_login(driver):
+    dashboard = LoginPage(driver).login("user@example.com", "Pass@123")
+    assert dashboard.is_loaded(), "Dashboard must render after successful login"`,
+  },
+  {
+    id: 'parallel-testsng',
+    title: 'Parallel Execution',
+    framework: 'Selenium + TestNG',
+    language: 'java',
+    highlights: ['ThreadLocal WebDriver', 'Data-driven with @DataProvider', 'Parallel test matrix'],
+    description:
+      'Thread-safe parallel test execution using ThreadLocal<WebDriver> with TestNG. Runs 4 flight-search combinations concurrently without state leaking between threads.',
+    code: `// BaseTest.java — thread-safe driver management
+public class BaseTest {
+
+    private static final ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
+
+    @BeforeMethod
+    public void setUp() {
+        ChromeOptions opts = new ChromeOptions().addArguments("--headless=new");
+        driverThread.set(new ChromeDriver(opts));
+    }
+
+    public static WebDriver getDriver() { return driverThread.get(); }
+
+    @AfterMethod
+    public void tearDown() {
+        WebDriver d = driverThread.get();
+        if (d != null) { d.quit(); driverThread.remove(); }
+    }
+}
+
+// FlightSearchTest.java
+public class FlightSearchTest extends BaseTest {
+
+    @Test(dataProvider = "routes")
+    public void searchFlight(String origin, String dest) {
+        new SearchPage(getDriver())
+            .search(origin, dest)
+            .assertResultsLoaded();
+    }
+
+    @DataProvider(parallel = true)
+    public Object[][] routes() {
+        return new Object[][]{
+            {"BLR", "DEL"}, {"BOM", "CCU"},
+            {"HYD", "BLR"}, {"DEL", "BOM"}
+        };
+    }
+}`,
+  },
+  {
+    id: 'cicd-pipeline',
+    title: 'CI/CD Pipeline',
+    framework: 'GitHub Actions',
+    language: 'yaml',
+    highlights: ['Matrix strategy per suite', 'Nightly scheduled runs', 'Allure report artifacts'],
+    description:
+      'GitHub Actions workflow that triggers on PR and nightly schedule. Runs three test suites in parallel using a matrix strategy and uploads Allure results as artifacts.',
+    code: `# .github/workflows/regression.yml
+name: Regression Suite
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 2 * * *'   # Nightly at 02:00 UTC
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        suite: [booking, auth, search]
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Run \${{ matrix.suite }} suite
+        run: |
+          mvn test -Dsurefire.suiteXmlFiles=suites/\${{ matrix.suite }}.xml
+
+      - name: Upload Allure results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-\${{ matrix.suite }}
+          path: target/allure-results`,
+  },
+]
+
 export const socials = [
   {
     label: 'LinkedIn',

@@ -10,6 +10,7 @@ import { name } from '@/data/content'
 const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/projects', label: 'Projects' },
+  { to: '/automation', label: 'Automation' },
   { to: '/resume', label: 'Resume' },
   { to: '/contact', label: 'Contact' },
 ]

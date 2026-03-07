@@ -23,3 +23,13 @@ export const RESUME_QUERY = `*[_type == "resume"][0] {
   version,
   lastUpdated,
 }`
+
+export const LEARNING_QUERY = `*[_type == "learningGoal"] | order(order asc) {
+  _id,
+  title,
+  provider,
+  status,
+  progressPercent,
+  targetDate,
+  tags,
+}`

@@ -7,6 +7,7 @@ import Projects from '@/pages/Projects'
 import Resume from '@/pages/Resume'
 import Contact from '@/pages/Contact'
 import Automation from '@/pages/Automation'
+import Blog from '@/pages/Blog'
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -25,6 +26,7 @@ function AnimatedRoutes() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/automation" element={<Automation />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </motion.div>
     </AnimatePresence>

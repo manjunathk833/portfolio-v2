@@ -8,6 +8,7 @@ import Resume from '@/pages/Resume'
 import Contact from '@/pages/Contact'
 import Automation from '@/pages/Automation'
 import Blog from '@/pages/Blog'
+import Videos from '@/pages/Videos'
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -27,6 +28,7 @@ function AnimatedRoutes() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/automation" element={<Automation />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/videos" element={<Videos />} />
         </Routes>
       </motion.div>
     </AnimatePresence>

@@ -1,10 +1,10 @@
 # CLAUDE.md
 
 ## CURRENT STATE
-**Last Updated:** 2026-03-07
-**Active Sprint:** COMPLETE
-**Last Completed:** Sprint 5 — Polish + Animations + SEO + Netlify Deploy
-**Next Action:** Live on Netlify — ongoing content updates via Sanity Studio
+**Last Updated:** 2026-03-08
+**Active Sprint:** Sprint 8 COMPLETE — QA Automation Showcase
+**Last Completed:** Sprint 8 — QA Automation Showcase (/automation page)
+**Next Action:** Sprint 6 — Blog Section (after user types 'ok')
 
 ---
 
@@ -15,6 +15,9 @@
 - [x] Sprint 3 — Resume Page (Sanity PDF)
 - [x] Sprint 4 — Contact Page + Footer
 - [x] Sprint 5 — Polish + Animations + SEO + Netlify Deploy
+- [x] Sprint 8 — QA Automation Showcase (/automation page)
+- [ ] Sprint 6 — Blog Section (Dev.to + Medium aggregation)
+- [ ] Sprint 7 — YouTube Video Section (Sanity-driven)
 
 ---
 
@@ -26,6 +29,9 @@
 - 2026-03-06: Added class-variance-authority manually — shadcn add does not install all transitive deps
 - 2026-03-06: Sanity CORS — must add http://localhost:5173 (and Netlify URL) to sanity.io/manage → project → API → CORS Origins
 - 2026-03-06: Sanity fields can return null (not undefined) — always use `?? []` not `= []` for array fields
+- 2026-03-08: Sprint 8 — react-syntax-highlighter: use PrismLight (not Prism) + register only needed languages to keep vendor-syntax chunk under 60KB (vs 640KB with full Prism)
+- 2026-03-08: Sprint 8 — YAML code in JS template literals: escape `${{` as `\${{` to prevent template literal interpolation parse errors
+- 2026-03-08: Sprint 8 — learningGoal Sanity schema added; LearningCards are Sanity-driven (update via Studio, no redeploy)
 
 ---
 
@@ -49,9 +55,10 @@ See docs/ARCHITECTURE.md for tech decisions.
 ## TECH STACK
 - Frontend: React 19 + Vite 7 + Tailwind CSS v4 + shadcn/ui
 - Animations: Framer Motion
-- CMS: Sanity v3 (managed)
+- CMS: Sanity v3 (managed) — schemas: project, resume, learningGoal
 - GitHub API: native fetch (no SDK)
 - SEO: react-helmet-async
+- Syntax highlighting: react-syntax-highlighter (PrismLight, Java/Python/YAML only)
 - Hosting: Netlify
 
 ---

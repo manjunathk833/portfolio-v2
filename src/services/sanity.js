@@ -33,3 +33,12 @@ export const LEARNING_QUERY = `*[_type == "learningGoal"] | order(order asc) {
   targetDate,
   tags,
 }`
+
+export const VIDEOS_QUERY = `*[_type == "video"] | order(order asc) {
+  _id,
+  title,
+  description,
+  youtubeUrl,
+  project,
+  publishedAt,
+}`

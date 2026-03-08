@@ -41,7 +41,7 @@ function BlogGrid() {
         <div className="space-y-2">
           <h2 className="text-xl font-semibold">No posts yet</h2>
           <p className="text-muted-foreground max-w-md">
-            Articles are on their way. Once a Dev.to or Medium account is connected, posts will
+            Articles are on their way. Once the Dev.to account is connected, posts will
             appear here automatically — no redeployment needed.
           </p>
         </div>
@@ -49,10 +49,6 @@ function BlogGrid() {
           <span className="flex items-center gap-1.5 rounded-full border border-border px-3 py-1">
             <span className="h-2 w-2 rounded-full bg-[#0a0a0a] dark:bg-white" />
             DEV.to
-          </span>
-          <span className="flex items-center gap-1.5 rounded-full border border-border px-3 py-1">
-            <span className="h-2 w-2 rounded-full bg-[#00ab6c]" />
-            Medium
           </span>
         </div>
       </motion.div>
@@ -102,7 +98,7 @@ export default function Blog() {
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Articles on test automation, SDET craft, and lessons from 6 years of building
-            frameworks at scale — aggregated from Dev.to and Medium.
+            frameworks at scale — published on Dev.to.
           </p>
         </motion.section>
 

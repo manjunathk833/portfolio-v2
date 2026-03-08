@@ -7,10 +7,6 @@ const PLATFORM_STYLES = {
     label: 'DEV.to',
     badgeClass: 'bg-[#0a0a0a] text-white border-[#0a0a0a] dark:bg-white dark:text-black dark:border-white',
   },
-  medium: {
-    label: 'Medium',
-    badgeClass: 'bg-[#00ab6c]/10 text-[#00ab6c] border-[#00ab6c]/30',
-  },
 }
 
 function formatDate(dateStr) {

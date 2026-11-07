@@ -1,13 +1,16 @@
 {
-  "name": "portfolio-tmp",
+  "name": "manjunath-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "studio:dev": "npm --prefix studio run dev",
+    "studio:build": "npm --prefix studio run build",
+    "studio:deploy": "npm --prefix studio run deploy"
   },
   "dependencies": {
     "@sanity/client": "^7.16.0",

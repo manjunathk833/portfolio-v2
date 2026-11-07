@@ -2,69 +2,120 @@ export const name = 'Manjunath H K'
 
 export const title = 'Senior SDET'
 
-export const headline = 'Senior SDET | API & UI Automation | Java · Python · Microservices'
+export const headline = 'Senior SDET | API & UI Automation | Java, Python, Microservices | AI-Augmented Testing'
 
 export const githubUsername = 'manjunathk833'
 
 export const bio =
-  'Senior SDET specializing in API/UI Automation in Microservice Architecture using Java, Groovy, and Python — with 6 years of experience across Airlines, Online Consumer Services, and Media & Communication sectors. Passionate about building robust automation frameworks that cut release cycles and eliminate manual overhead.'
+  'Senior SDET with 7 years of experience building scalable API, UI, and Mobile automation frameworks across Airline, Quick-Commerce, and OTT platforms on microservice architectures. Drives automation best practices and reviews 95% of pull requests across a 10+ member QA team, while engineering AI-driven testing systems (LLM-based Azure DevOps defect filing, Python/Ollama EQE compliance trackers, and Copilot STLC agents) that cut delivery time by 60% and manual regression effort by 90%.'
 
-export const tagline = 'Building quality at scale — one automation framework at a time.'
+export const tagline = 'Engineering autonomous quality gates, resilient test architectures & AI-driven QE pipelines at scale.'
 
 export const stats = {
-  yearsExperience: 6,
-  automationFrameworks: 5,
-  testCasesWritten: 1000,
+  yearsExperience: 7,
+  automationFrameworks: 6,
+  testCasesWritten: 1500,
 }
 
 export const roles = [
   'Senior SDET',
-  'Test Automation Engineer',
-  'Quality Champion',
-  'API Automation Specialist',
-  'MAANG Aspirant',
+  'AI Systems & Quality Architect',
+  'API & Microservices Automation Specialist',
+  'Playwright & Selenium Architect',
+  'Quality Engineering Leader',
 ]
 
 export const skillsByCategory = {
-  'API Automation': ['Java', 'Rest Assured', 'Ready API', 'SOAP', 'Groovy', 'TestNG', 'Cucumber', 'BDD', 'Postman', 'Allure'],
-  'UI Automation': ['Selenium', 'Appium', 'Python'],
-  'CI/CD & Cloud': ['Jenkins', 'GCP', 'TeamCity', 'Harness', 'Docker', 'Azure DevOps'],
-  'Tools & Databases': ['Git', 'GitHub', 'Jira', 'Zephyr', 'Postgres SQL', 'IntelliJ', 'Charles Proxy', 'Burp Suite', 'Kibana'],
+  Languages: ['Java 17', 'Python 3.12', 'SQL', 'Groovy'],
+  'Test Automation': [
+    'REST Assured',
+    'Selenium WebDriver',
+    'Playwright',
+    'Appium',
+    'Cucumber BDD',
+    'TestNG',
+    'ReadyAPI',
+    'Postman',
+  ],
+  'CI/CD & Infrastructure': [
+    'Harness CI/CD',
+    'Jenkins',
+    'GitHub Actions',
+    'TeamCity',
+    'Azure DevOps',
+    'Docker',
+    'Kubernetes (kubectl)',
+    'GCP',
+    'Maven',
+    'Git',
+  ],
+  'Observability & Quality': [
+    'Kibana',
+    'Dynatrace',
+    'Kafka Event Logs',
+    'Google Metrics Explorer',
+    'Allure',
+    'Charles Proxy',
+    'Burp Suite',
+    'PostgreSQL',
+    'Jira',
+    'Zephyr',
+    'TestRail',
+  ],
+  'AI in Testing': [
+    'GitHub Copilot Agents',
+    'Agentic AI',
+    'Claude',
+    'Gemini',
+    'Ollama',
+    'GitHub AI API',
+  ],
+  Practices: [
+    'Microservices & API Testing',
+    'BDD',
+    'Page Object Model',
+    'Smoke & Regression Strategy',
+    'Shift-Left QE',
+    'Code Review',
+    'Agile / Scrum',
+  ],
 }
 
 export const experience = [
   {
-    company: 'Value Labs',
-    role: 'Senior Engineer — Quality Engineering',
+    company: 'ValueLabs',
+    role: 'Senior Engineer - QE (Senior SDET)',
     location: 'Remote',
-    duration: 'June 2023 – Present',
+    duration: 'Jun 2023 – Present',
     bullets: [
-      'Leveraged Agentic AI (AiDE) to accelerate test automation for the Order-Bags project, reducing automation implementation effort by 50% and test case drafting time by 75% across service-level and E2E validations.',
-      'Developed multiple automation frameworks for PNR Linking and Special Service Requests in an airline project, automating 1000+ test cases using ReadyAPI and Rest Assured in Java — cutting effort from 750 to 50 man-hours.',
-      'Streamlined test cycles using Azure DevOps, ReadyAPI, Rest Assured with BDD Cucumber, and AiDE for efficient test management.',
-      'Automated Kibana log analysis, log issue reporting, and data quality validation pipelines — eliminating manual intervention and saving ~12 hours/week of QA overhead.',
+      'Automation Practices & Code Review: Drove automation best practices and coding standards for a 10+ member QA team; mentored engineers, reviewed 95% of pull requests across project repositories, and authored 500+ commits across UI and API automation suites.',
+      'Mosaic Automation Framework: Architected the Mosaic UI and API automation framework (Java, REST Assured, Selenium with Page Object Model, Cucumber BDD) across a portfolio of 6+ airline programs; 1,500+ automated tests cut regression effort from 1,125 to 125 man-hours (90%). Containerized suites with Docker and executed daily/weekly smoke and regression in Harness CI/CD (previously TeamCity).',
+      'AI Defect Automation: Built an AI-driven Azure DevOps defect pipeline in the REST Assured framework that auto-files bugs when failure-to-user-story confidence exceeds 95%, cutting initial triage and bug-filing effort by 70%.',
+      'AI Quality Insights: Developed an AI-driven EQE best-practices tracker (Python, Microsoft Teams webhooks, GitHub AI API, Ollama) delivering sprint-level compliance insights across projects and removing 80% of manual monitoring.',
+      'Log Monitoring: Automated daily error-log analysis across 30+ microservices using Kibana, Dynatrace, and Kafka event logs, catching 2–4 critical defects before each release.',
+      'AI Initiatives: Designed Copilot-based AI agents automating STLC workflows with Azure DevOps and Maven, reducing delivery time by 60%.',
     ],
   },
   {
     company: 'Dunzo',
     role: 'SDET-1',
-    location: 'Bangalore',
-    duration: 'Aug 2022 – June 2023',
+    location: 'Bengaluru',
+    duration: 'Aug 2022 – Jun 2023',
     bullets: [
-      'Automated end-to-end API flows and DB validations using the Ekam Java Framework for 4 key features, achieving 60% test coverage in a microservices-based Dunzo Merchant Service suite.',
-      'Owned feature testing across the full SDLC from planning to deployment, ensuring high quality with minimal production bug leakage.',
-      'Led root cause analysis of daily stability run failures using Allure reports, Google Metrics Explorer, and Kibana.',
+      'Automated end-to-end API flows and PostgreSQL validations using the Ekam Java framework for 4 core features, reaching 60% test coverage across the microservices-based Dunzo Merchant Service.',
+      'Executed Dockerized regression and feature suites through Jenkins CI/CD; owned feature quality from planning through deployment with minimal production defect leakage.',
+      'Led observability-driven root-cause analysis of daily stability failures with Allure, Google Metrics Explorer, and Kibana on GCP; ran and monitored Merchant Service containers via Docker and Kubernetes (kubectl) for service-failure and DB testing.',
     ],
   },
   {
     company: 'Tata Elxsi',
-    role: 'Engineer → Senior Engineer, QA',
-    location: 'Bangalore',
+    role: 'Senior Engineer, QA (Jul 2021 – Aug 2022) · Engineer, QA (Dec 2019 – Jul 2021)',
+    location: 'Bengaluru',
     duration: 'Dec 2019 – Aug 2022',
     bullets: [
-      'Designed and implemented a fully automated BDD testing framework using Python, Appium, and TestRail API — automating ~50% of sanity tests and saving ~5 man-days/month.',
-      'Contributed to a ₹100Cr OTT app project under Agile SDLC, enhancing iOS and Web platforms and directly boosting the iOS App Store rating from 1.9 to 3.5.',
-      'Performed manual, domain API, Catch Media API, stability, and KPI testing for Web and iOS platforms using Charles Proxy, Postman, Burp Suite, Jira, and Zephyr.',
+      'Architected a BDD automation framework for Android TV, Mobile, and Web OTT apps using Python, Appium, Selenium, and the TestRail API, automating 50% of sanity suites and saving ~5 man-days per month.',
+      'Automated backend API regression suites using SOAP UI (Groovy scripting) and Postman, cutting functional testing cycles by 50%.',
+      'Contributed to a $12M+ OTT platform under Agile SDLC across iOS, Android TV, and Web using Charles Proxy, Postman, Burp Suite, Jira, and Zephyr, helping lift the iOS App Store rating from 1.9 to 3.5.',
     ],
   },
 ]
@@ -80,8 +131,8 @@ export const education = [
 
 export const certifications = [
   {
-    title: 'ACE — Aide Agents Certified Engineer',
-    issuer: 'Value Labs',
+    title: 'ACE – AI Agents Certified Engineer',
+    issuer: 'ValueLabs',
     date: 'December 2025',
     description: 'AI Agents certification for best practices and usage of AI Agents for Automation and STLC.',
   },
@@ -100,15 +151,15 @@ export const certifications = [
 export const awards = [
   {
     title: 'Employee of the Month',
-    awarder: 'Value Labs',
+    awarder: 'ValueLabs',
     date: 'September 2025',
-    description: 'For contributions in implementing best practices and utilization of AiDE.',
+    description: 'Recognized for implementing best practices and AI-assisted automation using Agentic AI-Copilot.',
   },
   {
     title: 'Bravo Award',
     awarder: 'Tata Elxsi',
     date: 'January 2020',
-    description: 'For contribution to the Web Platform as a Manual and API Test Engineer in the OTT Project.',
+    description: 'Recognized for contributions to the Web Platform as a Manual and API Test Engineer on the OTT project.',
   },
 ]
 
@@ -284,10 +335,68 @@ jobs:
   },
 ]
 
+export const projects = [
+  {
+    _id: 'project-linkedin-automator',
+    title: 'Autonomous Browser & ATS Agent Platform',
+    description:
+      'Stealth CDP browser orchestration, 2-phase DOM batch autofill, 13-provider ATS job ingestion across 1,119 enterprise career portals, and evidence-gated LLM resume compilation backed by FastAPI + SQLite (70/70 regression gates).',
+    techStack: ['Python 3.12', 'Playwright CDP', 'FastAPI', 'SQLite', 'LLMs', 'GitHub Actions'],
+    githubUrl: 'https://github.com/manjunathk833/linkedin-automator',
+    liveUrl: '',
+    featured: true,
+    order: 1,
+  },
+  {
+    _id: 'project-codingforinterviews',
+    title: 'MAANG SDET & Algorithmic Arena',
+    description:
+      'Dual-language (Java 17 & Python 3.11) algorithmic pattern testbed, SDET system-design blueprints, and live coding harnesses with automated GitHub Actions CI verification.',
+    techStack: ['Java 17', 'Python 3.11', 'GitHub Actions', 'System Design', 'Automation Architecture'],
+    githubUrl: 'https://github.com/manjunathk833/codingforinterviews',
+    liveUrl: '',
+    featured: true,
+    order: 2,
+  },
+  {
+    _id: 'project-ai-content-pipeline',
+    title: 'Multi-Gate AI Content & Quality Pipeline',
+    description:
+      'Event-driven AI pipeline featuring local and cloud LLM orchestration, automated media synthesis, and a 7-gate human-in-the-loop quality & compliance engine.',
+    techStack: ['Python 3.12', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker', 'LLMs'],
+    githubUrl: '',
+    liveUrl: '',
+    featured: true,
+    order: 3,
+  },
+  {
+    _id: 'project-mosaic-airline-automation',
+    title: 'Mosaic Airline UI & API Automation Portfolio (LSY, SSR & PNR Linking)',
+    description:
+      'Enterprise airline automation portfolio (1,500+ UI & API tests across 12+ microservices and 6+ programs) built with Java 17, REST Assured, Selenium POM, Cucumber BDD, Copilot AI agents, and Docker in Harness CI/CD, cutting regression effort by 90%.',
+    techStack: ['Java 17', 'REST Assured', 'Selenium', 'Cucumber BDD', 'Docker', 'Harness CI/CD', 'GitHub Copilot'],
+    githubUrl: '',
+    liveUrl: '',
+    featured: true,
+    order: 4,
+  },
+  {
+    _id: 'project-portfolio-v2',
+    title: 'Interactive Developer & Senior SDET Portfolio',
+    description:
+      'High-performance developer showcase engineered with React 19, Vite 7, Tailwind CSS v4, Framer Motion, and Sanity CMS with live GitHub repository telemetry and interactive automation code patterns.',
+    techStack: ['React 19', 'Tailwind CSS v4', 'Framer Motion', 'Sanity CMS', 'Vite'],
+    githubUrl: 'https://github.com/manjunathk833/portfolio-v2',
+    liveUrl: 'https://manjunathhk.netlify.app',
+    featured: true,
+    order: 5,
+  },
+]
+
 export const socials = [
   {
     label: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/manjunath-h-k-ab30b1146/',
+    url: 'https://www.linkedin.com/in/manjunath-h-k/',
     icon: 'linkedin',
   },
   {

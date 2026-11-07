@@ -97,7 +97,7 @@ export default function Blog() {
             <span className="text-primary">testing & quality</span>
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Articles on test automation, SDET craft, and lessons from 6 years of building
+            Articles on test automation, SDET craft, and lessons from 7 years of building
             frameworks at scale — published on Dev.to.
           </p>
         </motion.section>

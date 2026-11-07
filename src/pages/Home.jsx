@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Manjunath H K — Senior SDET</title>
-        <meta name="description" content="Senior SDET specializing in API & UI Automation with 6 years of experience in Java, Python, and Microservices. Open to MAANG-level roles." />
-        <meta property="og:title" content="Manjunath H K — Senior SDET" />
-        <meta property="og:description" content="Senior SDET specializing in API & UI Automation. 6 years across Airlines, Consumer Services, and Media sectors." />
+        <title>Manjunath H K — Senior SDET & AI Systems Builder</title>
+        <meta name="description" content="Senior SDET specializing in API & UI Automation with 7 years of experience in Java, Python, Playwright, Selenium, REST Assured, and AI-Augmented Testing." />
+        <meta property="og:title" content="Manjunath H K — Senior SDET & AI Systems Builder" />
+        <meta property="og:description" content="Senior SDET specializing in API, UI & Microservices Automation and AI Quality Engineering across Airline, Quick-Commerce, and OTT platforms." />
         <meta property="og:type" content="website" />
       </Helmet>
       <main>

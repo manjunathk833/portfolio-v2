@@ -1,6 +1,7 @@
 {
   "picture": {
     "hidden": true,
+    "fit": "cover",
     "url": "",
     "size": 64,
     "rotation": 0,
@@ -13,144 +14,171 @@
   },
   "basics": {
     "name": "Manjunath H K",
-    "headline": "Senior SDET | API & UI Automation | Java · Python · Microservices",
+    "headline": "Senior SDET | API & UI Automation | Java, Python, Microservices | AI-Augmented Testing",
     "email": "manjunathhk833@gmail.com",
-    "phone": "+917337813770",
-    "location": "Bengaluru, Karnataka, India",
+    "phone": "+91 7337813770",
+    "location": "Bengaluru, India",
     "website": {
-      "url": "https://manjunath-hk.netlify.app/",
-      "label": "PortFolio"
+      "url": "https://manjunathhk.netlify.app/",
+      "label": "manjunathhk.netlify.app"
     },
     "customFields": [
       {
         "id": "zwmg5x0mjqjlwzrbxin92zmu",
         "icon": "linkedin-logo",
-        "text": "Linkedin",
-        "link": "https://www.linkedin.com/in/manjunath-h-k-ab30b1146/"
+        "text": "linkedin.com/in/manjunath-h-k",
+        "link": "https://www.linkedin.com/in/manjunath-h-k/"
       },
       {
         "id": "b752q24g9ie1okz0srobwtx3",
         "icon": "github-logo",
-        "text": "Github",
+        "text": "github.com/manjunathk833",
         "link": "https://github.com/manjunathk833"
       }
     ]
   },
   "summary": {
-    "title": "Summary",
+    "title": "Professional Summary",
+    "icon": "",
     "columns": 1,
     "hidden": false,
-    "content": "<p>Senior SDET Specializing in API/UI Automation in Microservice Architecture in Java,Groovy and Python with 6 Years Of Experience in Airlines, Online consumer services and Media and Communication sectors.</p>"
+    "showHeading": true,
+    "keepTogether": false,
+    "startOnNewPage": false,
+    "content": "<p data-resume-whitespace=\"preserve\">Senior SDET with 7 years of experience building API and UI automation frameworks for airline, quick-commerce and OTT platforms on microservice architectures. Drives automation best practices and code reviews across a 10+ member QA team, and builds AI-driven testing tools (LLM-based defect filing, Copilot STLC agents) that cut delivery time by 60%. Core stack: Java, Python, REST Assured, Selenium, Cucumber BDD, Docker and Harness/Jenkins CI/CD; reduced regression effort by 90% across 6+ airline programs.</p>"
   },
   "sections": {
     "profiles": {
       "title": "Profiles",
+      "icon": "",
       "columns": 1,
       "hidden": true,
-      "items": [
-        {
-          "id": "lxyymrtmmbkpm875hou4nf17",
-          "hidden": false,
-          "icon": "linkedin",
-          "network": "LinkedIn",
-          "username": "manjunath-h-k-ab30b1146/",
-          "website": {
-            "url": "https://www.linkedin.com/in/manjunath-h-k-ab30b1146/",
-            "label": ""
-          }
-        },
-        {
-          "id": "xiyzntsbf95rljisjw2wvuih",
-          "hidden": false,
-          "icon": "github",
-          "network": "Github",
-          "username": "manjunathhk833",
-          "website": {
-            "url": "https://github.com/manjunathk833",
-            "label": ""
-          }
-        }
-      ]
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": []
     },
     "experience": {
-      "title": "Experience",
+      "title": "Professional Experience",
+      "icon": "",
       "columns": 1,
       "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
       "items": [
         {
           "id": "vnozgfplb3zozel1a656m9jd",
           "hidden": false,
-          "company": "Value Labs",
+          "company": "ValueLabs",
           "position": "Senior Engineer - QE",
           "location": "Remote",
-          "period": "June 2023 - Present",
+          "period": "Jun 2023 – Present",
+          "dates": {
+            "start": "2023-06",
+            "end": null,
+            "present": true
+          },
           "website": {
             "url": "",
-            "label": ""
+            "label": "",
+            "inlineLink": false
           },
-          "description": "<ul><li><p>Leveraged Agentic AI (AiDE) to accelerate test automation for the Order-Bags project, reducing automation implementation effort by 50% and test case drafting time by 75% across service-level and E2E validations.</p></li><li><p>Developed multiple Automation frameworks for PNR Linking and Special Service Requests in an airline project, automating 1000+ test cases using Ready API and Rest Assured in java and cutting effort from 750 to 50 man-hours.</p></li><li><p>Streamlined test cycles using Azure DevOps (ADO), ReadyAPI, Rest Assured with BDD Cucumber, and Aide-AI for efficient test management.</p></li><li><p>Automated Kibana log analysis,Log issues reporting, and data quality validation pipelines, eliminating manual intervention and saving around 12 hours/week of QA overhead.</p></li></ul>"
+          "description": "<ul><li><p data-resume-whitespace=\"preserve\"><strong>Automation Practices &amp; Code Review:</strong> Drove automation best practices and processes for a 10+ member QA team: mentored engineers, defined automation coding standards, and reviewed 95% of pull requests across project repositories; authored 500+ commits across multiple API and UI automation projects.</p></li><li><p data-resume-whitespace=\"preserve\"><strong>Mosaic Automation Framework:</strong> Architected the Mosaic UI and API automation framework (Java, REST Assured, Selenium with Page Object Model, Cucumber BDD) for a portfolio of 6+ airline programs; 1,500+ tests cut regression effort from 1,125 to 125 man-hours (90%). Containerized suites with Docker and ran daily/weekly smoke and regression in Harness CI/CD (previously TeamCity).</p></li><li><p data-resume-whitespace=\"preserve\"><strong>AI Defect Automation:</strong> Built an AI-driven Azure DevOps defect pipeline in the REST Assured framework that auto-files bugs when failure-to-user-story confidence exceeds 95%, cutting initial triage and bug-filing effort by 70%.</p></li><li><p data-resume-whitespace=\"preserve\"><strong>AI Quality Insights:</strong> Developed an AI-driven EQE best-practices tracker (Python, Microsoft Teams webhooks, GitHub AI API, Ollama) giving sprint-level compliance insights across projects and removing 80% of manual monitoring.</p></li><li><p data-resume-whitespace=\"preserve\"><strong>Log Monitoring:</strong> Automated daily error-log analysis across 30+ microservices using Kibana, Dynatrace and Kafka event logs, catching 2–4 critical defects before each release.</p></li><li><p data-resume-whitespace=\"preserve\"><strong>AI Initiatives:</strong> Designed Copilot-based AI agents automating STLC workflows with Azure DevOps and Maven, reducing delivery time by 60%.</p></li></ul>",
+          "roles": []
         },
         {
           "id": "uu5h8gffblhifhf7r2ol6qvh",
           "hidden": false,
-          "options": {
-            "showLinkInTitle": false
-          },
           "company": "Dunzo",
           "position": "SDET-1",
-          "location": "Bangalore",
-          "period": "Aug 2022 - June 2023",
+          "location": "Bengaluru",
+          "period": "Aug 2022 – Jun 2023",
+          "dates": {
+            "start": "2022-08",
+            "end": "2023-06",
+            "present": false
+          },
           "website": {
             "url": "",
-            "label": ""
+            "label": "",
+            "inlineLink": false
           },
-          "description": "<ul><li><p>Automated end-to-end API flows and DB validations using the Ekam Java Framework for 4 key features, achieving 60% test coverage in a microservices based Dunzo Merchant Service suite.</p></li><li><p>Owned feature testing across the full SDLC from planning to deployment ensuring high quality with minimal production bug leakage.</p></li><li><p>Led root cause analysis of daily stability run failures using Allure reports, Google Metrics Explorer, and Kibana, utilized Java, IntelliJ, Postico, Docker, GCP, Jenkins, Jira, and Allure for automation and testing.</p></li></ul><p></p>"
+          "description": "<ul><li><p data-resume-whitespace=\"preserve\">Automated end-to-end API flows and PostgreSQL validations using the Ekam Java framework for 4 key features, reaching 60% test coverage across the microservices-based Merchant Service.</p></li><li><p data-resume-whitespace=\"preserve\">Ran Dockerized regression and feature suites through Jenkins CI/CD; owned feature quality from planning through deployment with minimal production defect leakage.</p></li><li><p data-resume-whitespace=\"preserve\">Led observability-driven root-cause analysis of daily stability failures with Allure, Google Metrics Explorer and Kibana on GCP; ran and monitored Merchant Service containers via Docker and Kubernetes (kubectl) for service-failure and DB testing.</p></li></ul>",
+          "roles": []
         },
         {
           "id": "dglfcku61bm9ujpihxthtd30",
           "hidden": false,
           "company": "Tata Elxsi",
-          "position": "Engineer, Senior Engineer- QA",
-          "location": "Bangalore",
-          "period": "Dec 2019 - Aug 2022",
+          "position": "",
+          "location": "Bengaluru",
+          "period": "Dec 2019 – Aug 2022",
+          "dates": {
+            "start": "2019-12",
+            "end": "2022-08",
+            "present": false
+          },
           "website": {
             "url": "",
-            "label": ""
+            "label": "",
+            "inlineLink": false
           },
-          "description": "<ul><li><p>Designed and implemented a fully automated BDD testing framework using Python, Appium, and TestRail API, automating ~50% of sanity tests and saving ~5 man-days/month.</p></li><li><p>Contributed to a ₹100Cr OTT app project under Agile SDLC, enhancing iOS and Web platforms and directly boosting the iOS App Store rating from 1.9 to 3.5.</p></li><li><p>Performed manual, domain API, Catch Media API, stability, and KPI testing for Web and iOS platforms using Charles Proxy, Postman, Burp Suite, Jira, and Zephyr.</p></li></ul>"
-        },
-        {
-          "id": "cki8zwdap5fr3r7ou29fmz0t",
-          "hidden": true,
-          "company": "Tata Elxsi",
-          "position": "QA-Manual and API: Web & iOS-OTT App",
-          "location": "",
-          "period": "2019-12-09 - 2021-08-01",
-          "website": {
-            "url": "https://www.tataelxsi.com/",
-            "label": ""
-          },
-          "description": "<ul><li><p>Worked in OTT App Project under Agile SDLC for Web and IOS Platforms and Contributed to the quarterly revenue growth of the company in a 100Cr OTT App project.</p></li><li><p>Directly Responsible for improving the app and raising the iOS App Store rating from 1.9 to 3.5.</p></li><li><p>Handled Manual Testing, domain API Testing, Catch media API testing, Stability and KPI Testing for Web and iOS Platforms. - Used Charles Proxy, Postman, Burp Suite for API testing. - Used Jira. Zephyr for Test management.</p></li></ul>"
+          "description": "<ul><li><p data-resume-whitespace=\"preserve\">Designed a BDD automation framework using Python, Appium and the TestRail API; automated 50% of the sanity suite, saving 5 man-days per month across Web and Mobile.</p></li><li><p data-resume-whitespace=\"preserve\">Contributed to a $12M+ OTT app under Agile; improved the iOS App Store rating from 1.9 to 3.5 through systematic API and stability testing.</p></li><li><p data-resume-whitespace=\"preserve\">Performed domain API, stability and KPI testing for Web and iOS using Charles Proxy, Postman and Burp Suite.</p></li></ul>",
+          "roles": [
+            {
+              "id": "un3fvihcuchc9ggik2pw831c",
+              "position": "Senior Engineer, QA",
+              "period": "Jul 2021 – Aug 2022",
+              "dates": {
+                "start": "2021-07",
+                "end": "2022-08",
+                "present": false
+              },
+              "description": ""
+            },
+            {
+              "id": "xwi4cpsqf9es9x08t93whcrd",
+              "position": "Engineer, QA",
+              "period": "Dec 2019 – Jul 2021",
+              "dates": {
+                "start": "2019-12",
+                "end": "2021-07",
+                "present": false
+              },
+              "description": ""
+            }
+          ]
         }
       ]
     },
     "education": {
       "title": "Education",
+      "icon": "",
       "columns": 1,
       "hidden": false,
+      "showHeading": true,
+      "keepTogether": true,
+      "startOnNewPage": false,
       "items": [
         {
           "id": "yyrbsf8ntxlgqe8x36ckakhj",
           "hidden": false,
           "school": "Sri Jayachamarajendra College of Engineering",
-          "degree": "Bachelor of Engineering",
-          "area": "Computer Science(Information Science and Engineering)",
-          "grade": "CGPA: 8.02/10",
-          "location": "",
-          "period": "August 2015 - March 2019",
+          "degree": "B.E. Computer Science (Information Science)",
+          "area": "",
+          "grade": "CGPA: 8.02 / 10",
+          "location": "Mysuru",
+          "period": "Aug 2015 – Mar 2019",
+          "dates": {
+            "start": "2015-08",
+            "end": "2019-03",
+            "present": false
+          },
           "website": {
-            "url": "https://sjce.ac.in/",
-            "label": ""
+            "url": "",
+            "label": "",
+            "inlineLink": false
           },
           "description": ""
         }
@@ -158,205 +186,318 @@
     },
     "projects": {
       "title": "Projects",
+      "icon": "",
       "columns": 1,
       "hidden": false,
+      "showHeading": true,
+      "keepTogether": true,
+      "startOnNewPage": false,
       "items": [
         {
-          "id": "f4r3k0ptnw7tw64sc7gwthfq",
+          "id": "jlmu7anaag3xf3ze9i1axvwm",
           "hidden": false,
-          "name": "Order Bags(ValueLabs)",
-          "period": "2025 - 2026",
+          "name": "LSY: API + UI Automation (ValueLabs, Mosaic Portfolio)",
+          "period": "Jan 2026 – Present",
+          "dates": {
+            "start": "2026-01",
+            "end": null,
+            "present": true
+          },
           "website": {
             "url": "",
-            "label": ""
+            "label": "",
+            "inlineLink": false
           },
-          "description": "<p>Utilized AiDE Agentic AI tool to implement and validate test framework, implemented over 50 test cases various flight-bag functionalities for service level and End to end validations in REST Assured.</p>"
+          "description": "<p data-resume-whitespace=\"preserve\">300+ tests across 12+ microservices including UI payment flows; Agentic AI cut automation effort by 75% and test authoring effort by 90%. Stack: Java, REST Assured, Selenium, Copilot, Harness CI/CD.</p>"
         },
         {
-          "id": "019ca7ae-2c7c-728c-b20f-04cc64ccf045",
+          "id": "336cph80z15ulyy1zzl7ul4y",
           "hidden": false,
-          "name": "SSR(Special Service Requests)(Value Labs)",
-          "period": "2024 - 2025",
+          "name": "SSR: Special Service Requests (ValueLabs, Mosaic Portfolio)",
+          "period": "Jan 2024 – Jan 2026",
+          "dates": {
+            "start": "2024-01",
+            "end": "2026-01",
+            "present": false
+          },
           "website": {
             "url": "",
-            "label": ""
+            "label": "",
+            "inlineLink": false
           },
-          "description": "<p>Implemented around 200 test cases decreasing test case execution time by over 90% utilizing Aide AI tool in Ready API(SOAP) and Rest Assured(BDD-TestNG) Frameworks</p>"
+          "description": "<p data-resume-whitespace=\"preserve\">300+ API tests on airline Special Service Request workflows; 15+ critical defects found. Stack: Java, REST Assured, Cucumber BDD, Harness CI/CD.</p>"
         },
         {
-          "id": "019ca7c2-ed29-7610-8045-1091dbeb4695",
+          "id": "wbyjy42aasw27n5qx7cpdx1o",
           "hidden": false,
-          "name": "PNR Linking(Value Labs)",
-          "period": "2023 - 2025",
+          "name": "PNR Linking (ValueLabs, Mosaic Portfolio)",
+          "period": "Jun 2023 – Jan 2025",
+          "dates": {
+            "start": "2023-06",
+            "end": "2025-01",
+            "present": false
+          },
           "website": {
             "url": "",
-            "label": ""
+            "label": "",
+            "inlineLink": false
           },
-          "description": "<p>Implemented over 700 test cases for Linking PNRs in Airlines Domain in Ready API(SOAP) Framework and reduced manual effort by over 80%.</p>"
+          "description": "<p data-resume-whitespace=\"preserve\">600+ API tests for linking PNRs to share seat benefits; 50+ defects found and 90% less manual testing effort. Stack: Java, ReadyAPI, Groovy, REST Assured, Harness, Azure DevOps.</p>"
         }
       ]
     },
     "skills": {
-      "title": "Skills",
+      "title": "Technical Skills",
+      "icon": "",
       "columns": 1,
       "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
       "items": [
         {
-          "id": "fqlkl04njh079snypy7n0u64",
+          "id": "7hmm9jh2ua6nkipdoshkyg5c",
           "hidden": false,
           "icon": "",
-          "name": "API Automation",
+          "iconColor": "",
+          "name": "Languages",
           "proficiency": "",
           "level": 0,
           "keywords": [
-            "TestNG",
             "Java",
-            "Rest Assured",
-            "Ready API",
-            "Soap",
-            "Groovy",
-            "Cucumber",
-            "BDD",
-            "Postman",
-            "Allure"
+            "Python",
+            "SQL",
+            "Groovy"
           ]
         },
         {
-          "id": "s15rpjqt09ne8kh8frg6upwa",
+          "id": "mmm8rijobwblkghrj0olxxcq",
           "hidden": false,
           "icon": "",
-          "name": "UI Automation",
+          "iconColor": "",
+          "name": "Test Automation",
           "proficiency": "",
           "level": 0,
           "keywords": [
-            "Selenium",
+            "REST Assured",
+            "Selenium WebDriver",
+            "Playwright",
             "Appium",
-            "Java",
-            "Python"
+            "Cucumber BDD",
+            "TestNG",
+            "ReadyAPI",
+            "Postman"
           ]
         },
         {
-          "id": "p20xjlldpxp8t446rzvhhgqk",
+          "id": "uyfipbqa3ddxtkdyf3h5bndt",
           "hidden": false,
           "icon": "",
-          "name": "CI/CD",
+          "iconColor": "",
+          "name": "CI/CD & Infrastructure",
           "proficiency": "",
           "level": 0,
           "keywords": [
-            "Jenkins",
-            "GCP",
-            "TeamCity",
             "Harness",
+            "Jenkins",
+            "TeamCity",
+            "GitHub Actions",
+            "Azure DevOps",
             "Docker",
-            "Azure DevOps"
+            "Kubernetes",
+            "GCP",
+            "Maven",
+            "Git"
           ]
         },
         {
-          "id": "raf0bopz64fx2xoav75mtikn",
+          "id": "1tc6qz0rw5xvsbdhqty0h1db",
           "hidden": false,
           "icon": "",
-          "name": "Version Control",
+          "iconColor": "",
+          "name": "Observability & Quality",
           "proficiency": "",
           "level": 0,
           "keywords": [
-            "Git",
-            "Github"
+            "Kibana",
+            "Dynatrace",
+            "Kafka (event-log monitoring)",
+            "Google Metrics Explorer",
+            "Allure",
+            "Charles Proxy",
+            "Burp Suite",
+            "PostgreSQL",
+            "Jira",
+            "Zephyr",
+            "TestRail"
           ]
         },
         {
-          "id": "jky4vvgcmums378l5m23a2b4",
+          "id": "yrvxmo2cdt6gj8x4wc7jkf60",
           "hidden": false,
           "icon": "",
-          "name": "SQL",
+          "iconColor": "",
+          "name": "AI in Testing",
           "proficiency": "",
           "level": 0,
           "keywords": [
-            "Postgres SQL"
+            "GitHub Copilot",
+            "Agentic AI",
+            "Claude",
+            "Gemini",
+            "Ollama",
+            "GitHub AI API"
+          ]
+        },
+        {
+          "id": "ubzqighhzfwiiis57a3qqoup",
+          "hidden": false,
+          "icon": "",
+          "iconColor": "",
+          "name": "Practices",
+          "proficiency": "",
+          "level": 0,
+          "keywords": [
+            "Microservices & API Testing",
+            "BDD",
+            "Page Object Model",
+            "Smoke/Regression Strategy",
+            "Shift-Left",
+            "Code Review",
+            "Agile/Scrum"
           ]
         }
-      ]
+      ],
+      "keywordLayout": "inline",
+      "layout": "default"
     },
     "languages": {
       "title": "Languages",
+      "icon": "",
       "columns": 1,
       "hidden": true,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
       "items": []
     },
     "interests": {
       "title": "Interests",
+      "icon": "",
       "columns": 1,
       "hidden": true,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
       "items": []
     },
     "awards": {
       "title": "Awards",
+      "icon": "",
       "columns": 1,
       "hidden": false,
+      "showHeading": true,
+      "keepTogether": true,
+      "startOnNewPage": false,
       "items": [
         {
           "id": "puoivek1tg4g3ip8vkhhf4bf",
           "hidden": false,
-          "title": "Employee Of the month",
-          "awarder": "Value Labs",
-          "date": "September 2025",
+          "title": "Employee of the Month",
+          "awarder": "ValueLabs",
+          "date": "Sep 2025",
+          "dates": {
+            "start": "2025-09",
+            "end": null,
+            "present": false
+          },
           "website": {
             "url": "",
-            "label": ""
+            "label": "",
+            "inlineLink": false
           },
-          "description": "<p>For Contributions in implementing best practices and utilization of Aide.</p>"
+          "description": "<p data-resume-whitespace=\"preserve\">Recognized for implementing best practices and AI-assisted automation using Agentic AI-Copilot.</p>"
         },
         {
           "id": "wntvggm5cwed634g0t2hw5jl",
           "hidden": false,
-          "title": "Bravo award",
+          "title": "Bravo Award",
           "awarder": "Tata Elxsi",
-          "date": "January 2020",
+          "date": "Jan 2020",
+          "dates": {
+            "start": "2020-01",
+            "end": null,
+            "present": false
+          },
           "website": {
             "url": "",
-            "label": ""
+            "label": "",
+            "inlineLink": false
           },
-          "description": "For contribution to Web Platform as a Manual and API Test Engineer in OTT Project"
+          "description": "<p>Awarded for contributions to OTT Web platform as Manual and API Test Engineer.</p>"
         }
       ]
     },
     "certifications": {
       "title": "Certifications",
+      "icon": "",
       "columns": 1,
       "hidden": false,
+      "showHeading": true,
+      "keepTogether": true,
+      "startOnNewPage": false,
       "items": [
         {
           "id": "019ca7cb-afac-743e-af5f-0d9e40a3febd",
           "hidden": false,
-          "title": "ACE -Aide Agents Certified Engineer",
-          "issuer": "Value Labs",
-          "date": "December 2025",
+          "title": "ACE – AI Agents Certified Engineer",
+          "issuer": "ValueLabs",
+          "date": "Dec 2025",
+          "dates": {
+            "start": "2025-12",
+            "end": null,
+            "present": false
+          },
           "website": {
             "url": "",
-            "label": ""
+            "label": "",
+            "inlineLink": false
           },
-          "description": "<p>AI Agents certifications for best practices and usage of implementing AI Agents for Automation and STLC</p>"
+          "description": "<p>Certified in implementing AI Agents for test automation and STLC optimization.</p>"
         },
         {
           "id": "jqtagxq9prk6a3f5ddlczdva",
-          "hidden": false,
+          "hidden": true,
           "title": "Python Beginner & Intermediate Training",
           "issuer": "Tata Elxsi",
           "date": "2021",
+          "dates": {
+            "start": "2021",
+            "end": null,
+            "present": false
+          },
           "website": {
             "url": "",
-            "label": ""
+            "label": "",
+            "inlineLink": false
           },
           "description": ""
         },
         {
           "id": "ql8x0u8xcteftidovxijs55j",
-          "hidden": false,
-          "title": "Selenium and Appium Linkedin Learning Certification",
-          "issuer": "LinkedIn learning",
+          "hidden": true,
+          "title": "Selenium and Appium LinkedIn Learning Certification",
+          "issuer": "LinkedIn Learning",
           "date": "2021",
+          "dates": {
+            "start": "2021",
+            "end": null,
+            "present": false
+          },
           "website": {
             "url": "",
-            "label": ""
+            "label": "",
+            "inlineLink": false
           },
           "description": ""
         }
@@ -364,20 +505,32 @@
     },
     "publications": {
       "title": "Publications",
+      "icon": "",
       "columns": 1,
       "hidden": true,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
       "items": []
     },
     "volunteer": {
       "title": "Volunteering",
+      "icon": "",
       "columns": 1,
       "hidden": true,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
       "items": []
     },
     "references": {
       "title": "References",
+      "icon": "",
       "columns": 1,
       "hidden": true,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
       "items": []
     }
   },
@@ -391,35 +544,34 @@
           "fullWidth": true,
           "main": [
             "summary",
+            "skills",
             "experience",
-            "skills"
-          ],
-          "sidebar": []
-        },
-        {
-          "fullWidth": true,
-          "main": [
             "projects",
-            "awards",
             "certifications",
-            "education"
+            "awards",
+            "education",
+            "profiles",
+            "languages",
+            "interests",
+            "publications",
+            "volunteer",
+            "references"
           ],
           "sidebar": []
         }
       ]
     },
-    "css": {
-      "enabled": false,
-      "value": "* {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}"
-    },
     "page": {
       "gapX": 3,
-      "gapY": 4,
-      "marginX": 14,
-      "marginY": 14,
-      "format": "letter",
+      "gapY": 3,
+      "marginX": 12,
+      "marginY": 12,
+      "format": "a4",
       "locale": "en-US",
-      "hideIcons": true
+      "dateFormat": "short",
+      "hideLinkUnderline": false,
+      "hideIcons": true,
+      "hideSectionIcons": true
     },
     "design": {
       "level": {
@@ -440,17 +592,25 @@
           "600"
         ],
         "fontSize": 10,
-        "lineHeight": 1.4
+        "lineHeight": 1.35
       },
       "heading": {
         "fontFamily": "Inter",
         "fontWeights": [
           "700"
         ],
-        "fontSize": 18,
+        "fontSize": 17,
         "lineHeight": 1.3
       }
     },
-    "notes": ""
+    "notes": "MASTER RESUME (single source of truth). Edit in rxresu.me, export JSON over Manjunath_HK_Master_Resume.json, then run: python main.py resume sync",
+    "styleRules": [],
+    "stylesheet": {
+      "mode": "semantic",
+      "source": {
+        "languageVersion": 1,
+        "text": "/* ATS: disable ligatures so 'fi'/'fl' extract as plain letters */\n* {\n\tfont-variant-ligatures: none;\n\tfont-feature-settings: \"liga\" 0, \"clig\" 0;\n}\n"
+      }
+    }
   }
 }

@@ -2,7 +2,7 @@
 
 Personal portfolio for a Senior SDET. Built with React + Vite + Tailwind CSS v4 + Sanity CMS.
 
-**Live:** https://manjunath-hk.netlify.app
+**Live:** https://manjunathhk.netlify.app
 
 ## Quick Start
 

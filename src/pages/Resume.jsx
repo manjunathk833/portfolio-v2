@@ -6,9 +6,9 @@ export default function Resume() {
     <>
       <Helmet>
         <title>Resume — Manjunath H K</title>
-        <meta name="description" content="View and download the resume of Manjunath H K — Senior SDET with 6 years of experience in Java, Python, and test automation." />
+        <meta name="description" content="View and download the resume of Manjunath H K — Senior SDET with 7 years of experience in Java, Python, Playwright, REST Assured, and AI-augmented test automation." />
         <meta property="og:title" content="Resume — Manjunath H K" />
-        <meta property="og:description" content="Senior SDET resume — API/UI Automation, Microservices, CI/CD, Java, Python." />
+        <meta property="og:description" content="Senior SDET resume — API/UI Automation, Microservices, CI/CD, Java, Python, Playwright, AI Quality Engineering." />
       </Helmet>
       <ResumeSection />
     </>

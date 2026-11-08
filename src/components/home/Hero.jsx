@@ -5,6 +5,7 @@ import { ArrowRight, Download, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { name, tagline, roles } from '@/data/content'
 import { useSanityResume } from '@/hooks/useSanityResume'
+import MathAutomationCanvas from '@/components/home/MathAutomationCanvas'
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0)
@@ -38,13 +39,13 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4">
-      {/* Animated background blobs */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000" />
-      </div>
+      {/* Interactive 60fps 3D Lissajous Cage × Pipeline DAG Canvas (100% Intensity) */}
+      <MathAutomationCanvas />
 
-      <div className="max-w-4xl mx-auto text-center">
+      {/* Subtle center radial vignette so Hero typography stays high-contrast */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(3,11,9,0.55)_0%,rgba(3,11,9,0.12)_65%,transparent_100%)]" />
+
+      <div className="max-w-4xl mx-auto text-center z-10">
         {/* Eyebrow */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}

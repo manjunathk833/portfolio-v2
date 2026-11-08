@@ -126,7 +126,7 @@ export default function Projects() {
               <p className="font-mono text-sm">// No projects found</p>
               <p className="mt-2 text-sm">
                 {projects.length === 0
-                  ? 'Add projects in Sanity Studio to see them here.'
+                  ? 'No projects available right now.'
                   : `No projects tagged with "${activeFilter}".`}
               </p>
             </motion.div>

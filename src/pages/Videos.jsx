@@ -39,8 +39,7 @@ function VideoGrid() {
         <div className="space-y-2">
           <h2 className="text-xl font-semibold">Videos coming soon</h2>
           <p className="text-muted-foreground max-w-md">
-            Project explainers and automation walkthroughs are being recorded. Once published,
-            they'll appear here automatically — no redeployment needed.
+            Deep-dive walkthroughs covering autonomous Playwright CDP agents, REST Assured + Cucumber BDD architectures, and AI-driven quality pipelines are currently in production.
           </p>
         </div>
         <div className="flex items-center gap-1.5 rounded-full border border-border px-4 py-1.5 text-sm text-muted-foreground">

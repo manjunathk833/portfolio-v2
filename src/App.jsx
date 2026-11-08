@@ -2,6 +2,7 @@ import { useLocation, Routes, Route } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import MemojiAssistant from '@/components/avatar/MemojiAssistant'
 import Home from '@/pages/Home'
 import Projects from '@/pages/Projects'
 import Resume from '@/pages/Resume'
@@ -43,6 +44,7 @@ export default function App() {
         <AnimatedRoutes />
       </div>
       <Footer />
+      <MemojiAssistant />
     </div>
   )
 }

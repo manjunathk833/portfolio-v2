@@ -99,8 +99,11 @@ body {
 }
 
 /* Brutalist Sharp Card Treatment + [+] Corner Crosshairs */
-.bg-card {
+.bg-card:not(.absolute):not(.fixed):not(.sticky) {
   position: relative;
+}
+
+.bg-card {
   border-width: 2px;
   border-radius: 4px;
   box-shadow: 4px 4px 0px var(--border);
@@ -133,3 +136,34 @@ body {
 .bg-card:hover {
   box-shadow: 4px 4px 0px var(--primary);
 }
+
+/* Borderless Draggable 3D Memoji Physics & Ambient Depth */
+@keyframes memojiFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0.8deg);
+  }
+}
+
+.memoji-float-wrapper {
+  animation: memojiFloat 3.6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.memoji-3d-img {
+  filter: drop-shadow(0 16px 22px rgba(0, 0, 0, 0.85))
+    drop-shadow(0 0 18px rgba(52, 211, 153, 0.16));
+  transition: transform 0.16s ease-out, filter 0.2s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.memoji-container:hover .memoji-3d-img {
+  filter: drop-shadow(0 20px 26px rgba(0, 0, 0, 0.92))
+    drop-shadow(0 0 24px rgba(251, 191, 36, 0.34));
+}
+

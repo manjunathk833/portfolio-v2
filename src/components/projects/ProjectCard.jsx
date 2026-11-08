@@ -14,8 +14,8 @@ export default function ProjectCard({ project }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.45, ease: 'easeOut' }}
-      whileHover={{ scale: 1.02, boxShadow: '0 0 28px rgba(6,182,212,0.12)' }}
-      className="flex flex-col rounded-xl border border-border bg-card hover:border-primary/40 transition-colors overflow-hidden"
+      whileHover={{ y: -2, boxShadow: '4px 4px 0px var(--primary)' }}
+      className="flex flex-col rounded-xl border border-border bg-card hover:border-primary/60 transition-colors overflow-hidden"
     >
       {/* Screenshot */}
       {imageUrl && (

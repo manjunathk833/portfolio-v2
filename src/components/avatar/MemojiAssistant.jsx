@@ -20,7 +20,6 @@ const INITIAL_MESSAGE = {
 function renderFormattedText(raw) {
   const lines = (raw || '').split('\n')
   return lines.map((line, lineIdx) => {
-    // Tokenize bold (**...**), links ([label](url)), and italic (*...*)
     const parts = []
     let remaining = line
     let keyIdx = 0
@@ -79,6 +78,7 @@ export default function MemojiAssistant() {
   const [dismissedRoute, setDismissedRoute] = useState(null)
   const [messages, setMessages] = useState([INITIAL_MESSAGE])
   const [inputValue, setInputValue] = useState('')
+  const [isDraggingVisual, setIsDraggingVisual] = useState(false)
   const [tiltStyle, setTiltStyle] = useState(
     'perspective(500px) rotateY(0deg) rotateX(0deg) scale(1)'
   )
@@ -88,14 +88,18 @@ export default function MemojiAssistant() {
   const [quadrant, setQuadrant] = useState({ isLeft: false, isTop: false })
 
   const rootRef = useRef(null)
+  const triggerRef = useRef(null)
   const messagesEndRef = useRef(null)
   const dragStateRef = useRef({
     active: false,
+    armed: false,
     startX: 0,
     startY: 0,
     initialLeft: 0,
     initialTop: 0,
     travel: 0,
+    startTime: 0,
+    longPressTimer: null,
   })
 
   const routeBubbleText = ROUTE_BUBBLES[location.pathname] || ROUTE_BUBBLES['/']
@@ -113,10 +117,10 @@ export default function MemojiAssistant() {
     function handleResize() {
       if (!pos || !rootRef.current) return
       const rect = rootRef.current.getBoundingClientRect()
-      const maxLeft = Math.max(12, window.innerWidth - rect.width - 12)
-      const maxTop = Math.max(64, window.innerHeight - rect.height - 12)
-      const clampedX = Math.min(Math.max(12, pos.x), maxLeft)
-      const clampedY = Math.min(Math.max(64, pos.y), maxTop)
+      const maxLeft = Math.max(8, window.innerWidth - rect.width - 8)
+      const maxTop = Math.max(56, window.innerHeight - rect.height - 8)
+      const clampedX = Math.min(Math.max(8, pos.x), maxLeft)
+      const clampedY = Math.min(Math.max(56, pos.y), maxTop)
       setPos({ x: clampedX, y: clampedY })
       setQuadrant({
         isLeft: clampedX + rect.width / 2 < window.innerWidth * 0.48,
@@ -127,21 +131,144 @@ export default function MemojiAssistant() {
     return () => window.removeEventListener('resize', handleResize)
   }, [pos])
 
+  // Non-passive mobile Touch Event engine (fixes Chrome/Safari on iPhone page scroll & enables long-press drag)
+  useEffect(() => {
+    const el = triggerRef.current
+    if (!el) return
+
+    function clearLongPressTimer() {
+      if (dragStateRef.current.longPressTimer) {
+        clearTimeout(dragStateRef.current.longPressTimer)
+        dragStateRef.current.longPressTimer = null
+      }
+    }
+
+    function onTouchStart(e) {
+      if (!rootRef.current || e.touches.length !== 1) return
+      const touch = e.touches[0]
+      const rect = rootRef.current.getBoundingClientRect()
+
+      clearLongPressTimer()
+      dragStateRef.current = {
+        active: true,
+        armed: false,
+        startX: touch.clientX,
+        startY: touch.clientY,
+        initialLeft: rect.left,
+        initialTop: rect.top,
+        travel: 0,
+        startTime: Date.now(),
+        longPressTimer: setTimeout(() => {
+          if (dragStateRef.current.active) {
+            dragStateRef.current.armed = true
+            setIsDraggingVisual(true)
+            setTiltStyle('perspective(500px) rotateY(0deg) rotateX(0deg) scale(1.10)')
+            if (typeof navigator !== 'undefined' && navigator.vibrate) {
+              try {
+                navigator.vibrate(15)
+              } catch {
+                // Ignore vibration errors on unsupported browsers
+              }
+            }
+          }
+        }, 180),
+      }
+    }
+
+    function onTouchMove(e) {
+      if (!dragStateRef.current.active || !rootRef.current || e.touches.length !== 1) return
+      // Strictly block Chrome/Safari page scrolling while touching the avatar
+      if (e.cancelable) {
+        e.preventDefault()
+      }
+
+      const touch = e.touches[0]
+      const dx = touch.clientX - dragStateRef.current.startX
+      const dy = touch.clientY - dragStateRef.current.startY
+      const travel = Math.hypot(dx, dy)
+      dragStateRef.current.travel = travel
+
+      // Arm drag either after 180ms long-press OR as soon as finger slides >= 6px on the avatar
+      if (!dragStateRef.current.armed && travel >= 6) {
+        clearLongPressTimer()
+        dragStateRef.current.armed = true
+        setIsDraggingVisual(true)
+        setTiltStyle('perspective(500px) rotateY(0deg) rotateX(0deg) scale(1.10)')
+      }
+
+      if (dragStateRef.current.armed) {
+        const rect = rootRef.current.getBoundingClientRect()
+        const maxLeft = Math.max(8, window.innerWidth - rect.width - 8)
+        const maxTop = Math.max(56, window.innerHeight - rect.height - 8)
+        const nextX = Math.min(Math.max(8, dragStateRef.current.initialLeft + dx), maxLeft)
+        const nextY = Math.min(Math.max(56, dragStateRef.current.initialTop + dy), maxTop)
+
+        setPos({ x: nextX, y: nextY })
+        setQuadrant({
+          isLeft: nextX + rect.width / 2 < window.innerWidth * 0.48,
+          isTop: nextY + rect.height / 2 < window.innerHeight * 0.52,
+        })
+      }
+    }
+
+    function onTouchEnd(e) {
+      if (!dragStateRef.current.active) return
+      clearLongPressTimer()
+      const { travel, armed } = dragStateRef.current
+      dragStateRef.current.active = false
+      dragStateRef.current.armed = false
+      setIsDraggingVisual(false)
+      setTiltStyle('perspective(500px) rotateY(0deg) rotateX(0deg) scale(1)')
+
+      // If it was a quick tap (not dragged), toggle chat popover and prevent synthetic click ghost
+      if (travel < 8 && !armed) {
+        if (e.cancelable) e.preventDefault()
+        setIsOpen((prev) => !prev)
+      }
+    }
+
+    function onTouchCancel() {
+      clearLongPressTimer()
+      dragStateRef.current.active = false
+      dragStateRef.current.armed = false
+      setIsDraggingVisual(false)
+      setTiltStyle('perspective(500px) rotateY(0deg) rotateX(0deg) scale(1)')
+    }
+
+    el.addEventListener('touchstart', onTouchStart, { passive: false })
+    el.addEventListener('touchmove', onTouchMove, { passive: false })
+    el.addEventListener('touchend', onTouchEnd, { passive: false })
+    el.addEventListener('touchcancel', onTouchCancel, { passive: false })
+
+    return () => {
+      clearLongPressTimer()
+      el.removeEventListener('touchstart', onTouchStart)
+      el.removeEventListener('touchmove', onTouchMove)
+      el.removeEventListener('touchend', onTouchEnd)
+      el.removeEventListener('touchcancel', onTouchCancel)
+    }
+  }, [])
+
+  // Desktop Mouse Pointer Event handlers (touch is handled by the non-passive Touch listeners above)
   function handlePointerDown(e) {
-    if (!rootRef.current) return
+    if (e.pointerType === 'touch' || !rootRef.current) return
     const rect = rootRef.current.getBoundingClientRect()
     dragStateRef.current = {
       active: true,
+      armed: false,
       startX: e.clientX,
       startY: e.clientY,
       initialLeft: rect.left,
       initialTop: rect.top,
       travel: 0,
+      startTime: Date.now(),
+      longPressTimer: null,
     }
     e.currentTarget.setPointerCapture(e.pointerId)
   }
 
   function handlePointerMove(e) {
+    if (e.pointerType === 'touch') return
     const boxRect = e.currentTarget.getBoundingClientRect()
     const nx = ((e.clientX - boxRect.left) / Math.max(1, boxRect.width) - 0.5) * 2
     const ny = ((e.clientY - boxRect.top) / Math.max(1, boxRect.height) - 0.5) * 2
@@ -156,11 +283,13 @@ export default function MemojiAssistant() {
     dragStateRef.current.travel = travel
 
     if (travel >= 4) {
+      dragStateRef.current.armed = true
+      setIsDraggingVisual(true)
       const rect = rootRef.current.getBoundingClientRect()
-      const maxLeft = Math.max(12, window.innerWidth - rect.width - 12)
-      const maxTop = Math.max(64, window.innerHeight - rect.height - 12)
-      const nextX = Math.min(Math.max(12, dragStateRef.current.initialLeft + dx), maxLeft)
-      const nextY = Math.min(Math.max(64, dragStateRef.current.initialTop + dy), maxTop)
+      const maxLeft = Math.max(8, window.innerWidth - rect.width - 8)
+      const maxTop = Math.max(56, window.innerHeight - rect.height - 8)
+      const nextX = Math.min(Math.max(8, dragStateRef.current.initialLeft + dx), maxLeft)
+      const nextY = Math.min(Math.max(56, dragStateRef.current.initialTop + dy), maxTop)
 
       setPos({ x: nextX, y: nextY })
       setQuadrant({
@@ -171,9 +300,11 @@ export default function MemojiAssistant() {
   }
 
   function handlePointerUp(e) {
-    if (!dragStateRef.current.active) return
+    if (e.pointerType === 'touch' || !dragStateRef.current.active) return
     const travel = dragStateRef.current.travel
     dragStateRef.current.active = false
+    dragStateRef.current.armed = false
+    setIsDraggingVisual(false)
     try {
       e.currentTarget.releasePointerCapture(e.pointerId)
     } catch {
@@ -184,7 +315,8 @@ export default function MemojiAssistant() {
     }
   }
 
-  function handlePointerLeave() {
+  function handlePointerLeave(e) {
+    if (e.pointerType === 'touch') return
     if (!dragStateRef.current.active) {
       setTiltStyle('perspective(500px) rotateY(0deg) rotateX(0deg) scale(1)')
     }
@@ -240,19 +372,72 @@ export default function MemojiAssistant() {
 
   const rootPositionStyle = pos
     ? { left: `${pos.x}px`, top: `${pos.y}px` }
-    : { right: '24px', bottom: '16px' }
+    : { right: '20px', bottom: '16px' }
 
-  const bubbleAlignStyle = {
-    position: 'absolute',
-    ...(quadrant.isTop ? { top: '146px' } : { bottom: '146px' }),
-    ...(quadrant.isLeft ? { left: '0px' } : { right: '0px' }),
+  // Compute horizontal alignment so speech bubble never overflows on narrow mobile screens
+  function getBubbleAlignStyle() {
+    const bubbleWidth = 256
+    if (!pos || typeof window === 'undefined') {
+      return { position: 'absolute', bottom: '146px', right: '0px' }
+    }
+    const avatarWidth = 128
+    const desiredLeft = quadrant.isLeft ? pos.x : pos.x + avatarWidth - bubbleWidth
+    const clampedScreenLeft = Math.min(
+      Math.max(10, desiredLeft),
+      Math.max(10, window.innerWidth - bubbleWidth - 10)
+    )
+    return {
+      position: 'absolute',
+      ...(quadrant.isTop ? { top: '146px' } : { bottom: '146px' }),
+      left: `${clampedScreenLeft - pos.x}px`,
+    }
   }
 
-  const popoverAlignStyle = {
-    position: 'absolute',
-    ...(quadrant.isTop ? { top: '148px' } : { bottom: '148px' }),
-    ...(quadrant.isLeft ? { left: '0px' } : { right: '0px' }),
+  // Compute viewport-clamped fixed position for chat popover so it never clips on iPhone or desktop
+  function getPopoverFixedStyle() {
+    if (typeof window === 'undefined') {
+      return { position: 'fixed', right: '20px', bottom: '168px', width: '350px' }
+    }
+    const vw = document.documentElement.clientWidth || window.innerWidth
+    const vh = document.documentElement.clientHeight || window.innerHeight
+
+    // On mobile screens (< 640px), center horizontally with 12px margin on both sides
+    if (vw < 640) {
+      return {
+        position: 'fixed',
+        left: '12px',
+        right: '12px',
+        width: 'auto',
+        ...(quadrant.isTop ? { bottom: '16px' } : { top: '72px' }),
+      }
+    }
+
+    const boxWidth = 395
+    const boxHeight = 460
+    const avatarW = 128
+    const avatarH = 144
+
+    const rootX = pos ? pos.x : vw - 20 - avatarW
+    const rootY = pos ? pos.y : vh - 16 - avatarH
+
+    const desiredLeft = quadrant.isLeft ? rootX : rootX + avatarW - boxWidth
+    const clampedLeft = Math.min(Math.max(12, desiredLeft), Math.max(12, vw - boxWidth - 12))
+
+    const aboveTop = rootY - boxHeight - 8
+    const belowTop = rootY + avatarH + 8
+    const rawTop = aboveTop >= 68 ? aboveTop : belowTop
+    const clampedTop = Math.min(Math.max(68, rawTop), Math.max(68, vh - boxHeight - 12))
+
+    return {
+      position: 'fixed',
+      left: `${Math.round(clampedLeft)}px`,
+      top: `${Math.round(clampedTop)}px`,
+      width: `${boxWidth}px`,
+    }
   }
+
+  const bubbleAlignStyle = getBubbleAlignStyle()
+  const popoverAlignStyle = getPopoverFixedStyle()
 
   return (
     <div
@@ -262,7 +447,7 @@ export default function MemojiAssistant() {
       className="memoji-container fixed z-50 select-none"
     >
       {/* 1. ROUTE-AWARE FLOATING SPEECH BUBBLE ABOVE RAISED PRESENTING HAND (🤚) */}
-      {!isOpen && !bubbleDismissed && (
+      {!isOpen && !bubbleDismissed && !isDraggingVisual && (
         <div
           style={bubbleAlignStyle}
           onClick={() => setIsOpen(true)}
@@ -295,10 +480,13 @@ export default function MemojiAssistant() {
 
       {/* 2. BORDERLESS 3D APPLE MEMOJI CUTOUT (0 BORDERS, 0 BOX FRAME) */}
       <div
+        ref={triggerRef}
         role="button"
         tabIndex={0}
-        aria-label="Drag or click to chat with Manjunath H K"
+        aria-label="Hold or drag to move, tap to chat with Manjunath H K"
         data-testid="memoji-avatar-trigger"
+        data-dragging={isDraggingVisual ? 'true' : 'false'}
+        onContextMenu={(e) => e.preventDefault()}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -309,17 +497,28 @@ export default function MemojiAssistant() {
             setIsOpen((prev) => !prev)
           }
         }}
-        className="memoji-float-wrapper relative w-32 h-36 flex items-end justify-center cursor-grab active:cursor-grabbing bg-transparent border-0 focus:outline-none"
+        className="memoji-float-wrapper memoji-touch-target relative w-32 h-36 flex items-end justify-center cursor-grab active:cursor-grabbing bg-transparent border-0 focus:outline-none"
       >
         <img
           src="/memoji-manjunath.png"
           alt="Manjunath H K 3D Memoji"
+          draggable={false}
           style={{ transform: tiltStyle }}
           className="memoji-3d-img w-32 h-auto object-contain"
         />
-        <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-background/90 border border-secondary/40 text-xs font-mono text-secondary flex items-center gap-1 shadow-lg whitespace-nowrap pointer-events-none">
-          <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-ping" />
-          <span>Ask me</span>
+        <span
+          className={`absolute bottom-1.5 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-background/90 border text-xs font-mono flex items-center gap-1 shadow-lg whitespace-nowrap pointer-events-none transition-colors ${
+            isDraggingVisual
+              ? 'border-primary text-primary'
+              : 'border-secondary/40 text-secondary'
+          }`}
+        >
+          <span
+            className={`w-1.5 h-1.5 rounded-full animate-ping ${
+              isDraggingVisual ? 'bg-primary' : 'bg-secondary'
+            }`}
+          />
+          <span>{isDraggingVisual ? 'Move me ✨' : 'Ask me'}</span>
         </span>
       </div>
 
@@ -328,7 +527,7 @@ export default function MemojiAssistant() {
         <div
           style={popoverAlignStyle}
           data-testid="memoji-chat-popover"
-          className="absolute w-[350px] sm:w-[395px] bg-card flex flex-col overflow-hidden z-50"
+          className="fixed bg-card flex flex-col overflow-hidden z-50"
         >
           {/* Chat Header */}
           <div className="flex items-center justify-between px-3.5 py-2.5 bg-background/80 border-b border-border">

@@ -37,7 +37,7 @@ function AnimatedRoutes() {
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
+    <div className="min-h-screen flex flex-col text-foreground">
       <Navbar />
       <div className="flex-1">
         <AnimatedRoutes />

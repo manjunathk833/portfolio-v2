@@ -3,7 +3,14 @@ import { NavLink } from 'react-router-dom'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { useTheme } from 'next-themes'
 import { Menu, Code2, Sun, Moon } from 'lucide-react'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
 import { Button } from '@/components/ui/button'
 import { name } from '@/data/content'
 
@@ -17,7 +24,7 @@ const navLinks = [
   { to: '/contact', label: 'Contact' },
 ]
 
-function NavLinks({ onClick }) {
+function NavLinks({ onClick, mobile = false }) {
   return navLinks.map(({ to, label }) => (
     <NavLink
       key={to}
@@ -25,14 +32,21 @@ function NavLinks({ onClick }) {
       end={to === '/'}
       onClick={onClick}
       className={({ isActive }) =>
-        `text-sm font-medium transition-colors hover:text-primary ${
-          isActive
-            ? 'text-primary border-b-2 border-primary pb-0.5'
-            : 'text-muted-foreground'
-        }`
+        mobile
+          ? `flex items-center justify-between px-3 py-2.5 rounded text-sm font-mono font-medium transition-colors ${
+              isActive
+                ? 'bg-primary/15 text-primary border-l-2 border-primary'
+                : 'text-muted-foreground hover:text-foreground hover:bg-background/60'
+            }`
+          : `text-sm font-medium transition-colors hover:text-primary ${
+              isActive
+                ? 'text-primary border-b-2 border-primary pb-0.5'
+                : 'text-muted-foreground'
+            }`
       }
     >
-      {label}
+      <span>{label}</span>
+      {mobile && <span className="text-xs font-mono opacity-60">→</span>}
     </NavLink>
   ))
 }
@@ -93,14 +107,35 @@ export default function Navbar() {
           <ThemeToggle />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Open navigation menu"
+                data-testid="mobile-menu-trigger"
+              >
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-card border-border w-64">
-              <div className="flex flex-col gap-6 mt-8">
-                <NavLinks onClick={() => setOpen(false)} />
-              </div>
+            <SheetContent
+              side="right"
+              data-testid="mobile-menu-drawer"
+              className="fixed inset-y-0 right-0 z-50 w-72 bg-[#071814] border-l-2 border-border p-6 text-foreground shadow-2xl"
+            >
+              <SheetHeader className="p-0 pb-4 border-b border-border text-left">
+                <SheetTitle className="flex items-center gap-2 font-mono text-sm text-foreground">
+                  <Code2 className="h-4 w-4 text-primary" />
+                  <span>{name.split(' ')[0]}.hk // MENU</span>
+                </SheetTitle>
+                <SheetDescription className="text-xs font-mono text-muted-foreground">
+                  Navigate across sections
+                </SheetDescription>
+              </SheetHeader>
+              <nav
+                aria-label="Mobile navigation"
+                className="flex flex-col gap-2 mt-4"
+              >
+                <NavLinks mobile onClick={() => setOpen(false)} />
+              </nav>
             </SheetContent>
           </Sheet>
         </div>

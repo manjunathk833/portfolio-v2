@@ -39,10 +39,9 @@ function BlogGrid() {
           <PenLine className="h-10 w-10 text-primary" />
         </div>
         <div className="space-y-2">
-          <h2 className="text-xl font-semibold">No posts yet</h2>
+          <h2 className="text-xl font-semibold">Articles coming soon</h2>
           <p className="text-muted-foreground max-w-md">
-            Articles are on their way. Once the Dev.to account is connected, posts will
-            appear here automatically — no redeployment needed.
+            Technical deep dives on distributed test architectures, LLM-assisted defect triage, and deterministic browser automation are currently being drafted.
           </p>
         </div>
         <div className="flex gap-3 flex-wrap justify-center text-sm text-muted-foreground">

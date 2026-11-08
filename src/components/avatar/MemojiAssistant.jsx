@@ -11,7 +11,7 @@ import {
 const INITIAL_MESSAGE = {
   id: 'welcome',
   role: 'assistant',
-  text: "Hey! I'm **Manjunath H K** 👋 I'm a Senior SDET & AI Systems Builder (~7 YOE).\n\nAsk me about my **1,500+ test Mosaic architecture**, my **AI/LLM self-healing pipelines**, my **notice period**, or **paste your Job Description** below to score our fit!",
+  text: "Hey! I'm **Manjunath H K** 👋 I'm a Senior SDET (~7 YOE) building API, UI & AI-augmented test architectures.\n\nAsk me about my **1,500+ test Mosaic framework (-90% effort)**, my **AI-driven Azure DevOps defect & Copilot STLC agents**, my **notice period**, or **paste your Job Description** below to score our fit!",
   badge: '👋 First-Person Interactive Twin',
   badgeColor: 'text-amber-300 bg-amber-400/10 border-amber-400/30',
   metrics: ['$0 API Cost', '100% Injection-Proof'],
